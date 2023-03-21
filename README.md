@@ -17,4 +17,6 @@ Jauhkan spam dari email Anda dan tetap aman - cukup gunakan alamat email sementa
 6. Lihat pesan pada email yang tersimpan.
 7. Hapus Email.
 
-
+# CATATAN
+Dev tidak bertanggung jawab atas semua tidak kejahatan yang disebabkan oleh penggunaan temp mail yang tidak benar!!!!!!!
+bodo ga mau tanggung jawab gua.
