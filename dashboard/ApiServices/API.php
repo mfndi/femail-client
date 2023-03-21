@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 namespace ApiServices;
 
 require_once  __DIR__ . '/../vendor/autoload.php';

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/svgs" />
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/less" />
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/sprites" />
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/webfonts" />
+      <path value="$PROJECT_DIR$/user/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/user/vendor/bootstrap/scss" />
+      <path value="$PROJECT_DIR$/user/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/user/vendor/composer" />
+      <path value="$PROJECT_DIR$/user/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/user/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/user/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/css" />
+      <path value="$PROJECT_DIR$/user/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/metadata" />
+      <path value="$PROJECT_DIR$/user/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/scss" />
+      <path value="$PROJECT_DIR$/user/vendor/fontawesome-free/js" />
+      <path value="$PROJECT_DIR$/user/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/user/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/user/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/user/vendor/vlucas/phpdotenv" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>
