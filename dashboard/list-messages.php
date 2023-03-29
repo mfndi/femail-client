@@ -11,7 +11,8 @@ use Controllers\ApiUserController;
 
 $apiController = new ApiUserController();
 if(isset($_GET['email'])){
-    $fetchMessage = $apiController->listMessages($_SESSION['key'],$_GET['email']);
+    $rep = str_replace(" ", "+", $_GET['email']);
+    $fetchMessage = $apiController->listMessages($_SESSION['key'],$rep);
         if(isset($fetchMessage->message)){
             header("Location: index.php");
         }
@@ -184,7 +185,7 @@ if(isset($_GET['email'])){
     {
         let key = $('meta[name="key"]').attr('content');
         $.ajax({
-            url: 'http://localhost/TEMP_MAIL/tempmail-for-user/dashboard/message.php',
+            url: 'message.php',
             method: "POST",
             data : {
                 'key': key,
@@ -211,7 +212,7 @@ if(isset($_GET['email'])){
         let email = $('#myInput').val();
 
         $.ajax({
-            url: "http://localhost/TEMP_MAIL/tempmail-for-user/dashboard/save-email.php",
+            url: "save-email.php",
             method: "POST",
             data : {
                 'key': key,
