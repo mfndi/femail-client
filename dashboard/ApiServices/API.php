@@ -1,5 +1,11 @@
 <?php
+<<<<<<< HEAD
 namespace ApiServices;
+=======
+
+namespace ApiServices;
+
+>>>>>>> aa1243e (new 1)
 error_reporting(0);
 require_once  __DIR__ . '/../vendor/autoload.php';
 
