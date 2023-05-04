@@ -3,15 +3,18 @@ error_reporting(0);
 session_start();
 require_once __DIR__ . '/Controllers/ApiUserController.php';
 use Controllers\ApiUserController;
+$apiController = new ApiUserController();
+
 if(!isset($_SESSION['key'])){
     header("Location: ../index.php");
 }
 
 
 if(isset($_POST['generate'])){
-    $apiController = new ApiUserController();
+    
     $result = $apiController->checkKeyAndGenerate($_SESSION['key']);
     $_SESSION['email'] = $result->email;
+    
 }
 
 if(isset($_POST['inbox'])){
@@ -167,17 +170,11 @@ if(isset($_POST['inbox'])){
                             <hr>
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary"><?php echo $apiController->news()->title ?></h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="text-center">
-                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="img/undraw_posting_photo.svg" alt="...">
-                                    </div>
-                                    <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                                        constantly updated collection of beautiful svg images that you can use
-                                        completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                                        unDraw →</a>
+                                    <p><?php echo $apiController->news()->note ?></p>
+                                    <a target="_blank" rel="nofollow" href="https://github.com/mfndi/femail-client">GO TO GITHUB REPO →</a>
                                 </div>
                             </div>
                         </div>
