@@ -46,6 +46,11 @@ class ApiUserController
         return $this->API->deleteEmail($key, $email);
     }
 
+    public function news(){
+        return $this->API->APINews();
+
+    }
+
 }
 
 
