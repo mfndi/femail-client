@@ -100,7 +100,7 @@ if($fetchMessage == 401){
                                             echo Carbon::parse($data->date)->toDayDateTimeString();
                                             ?></td>
                                         <td>
-                                            <a href="list-messages.php?email=<?php echo  htmlspecialchars($data->email); ?>" class="btn btn-success">Inbox</a>
+                                            <a href="list-messages.php?email=<?php echo htmlentities($data->email); ?>" class="btn btn-success">Inbox</a>
                                             <button type="button" onclick="deleteEmail('<?php echo  htmlspecialchars($data->email); ?>')"  class="btn btn-warning">Delete</button>
                                         </td>
                                     </tr>

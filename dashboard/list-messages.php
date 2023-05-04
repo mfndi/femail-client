@@ -18,6 +18,7 @@ if(isset($_GET['email'])){
         }
     $email = htmlspecialchars($_GET['email']);
 }else{
+    $rep = str_replace(" ", "+", $_GET['email']);
     $fetchMessage = $apiController->listMessages($_SESSION['key'], $_SESSION['email']);
     $email = htmlspecialchars($_SESSION['email']);
 }
