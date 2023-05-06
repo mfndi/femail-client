@@ -196,11 +196,11 @@ class API
     }
 
     public function APINews(){
+        
+        $URL = $this->url."api/news";
         $curl = curl_init();
-
             curl_setopt_array($curl, [
-            CURLOPT_PORT => "8000",
-            CURLOPT_URL => "http://localhost:8000/api/news",
+            CURLOPT_URL => $URL,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
