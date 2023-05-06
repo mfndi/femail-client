@@ -208,7 +208,6 @@ class API
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_POSTFIELDS => "",
-            CURLOPT_COOKIE => "PHPSESSID=1dic4un6msnccmdq215sghnffa",
             ]);
 
             $response = curl_exec($curl);
