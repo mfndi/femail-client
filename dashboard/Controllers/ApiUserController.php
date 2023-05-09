@@ -2,6 +2,9 @@
 namespace Controllers;
 
 require_once __DIR__ . '/../ApiServices/API.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Dotenv\Dotenv;
 use ApiServices\API;
 
 
@@ -11,14 +14,14 @@ class ApiUserController
     protected  $API;
     public function __construct()
     {
-//        $api = new API();
         $this->API = new API();
+
     }
 
     public  function  checkKeyAndGenerate($key)
     {
-
         return $this->API->generateEmail($key);
+       
     }
 
     public  function listMessages($key, $email)
@@ -51,8 +54,8 @@ class ApiUserController
 
     }
 
+    public function onlyKey()
+    {
+        return $this->API->KEY;
+    }
 }
-
-
-//$test = new ApiUserController();
-//print_r($test->checkKeyAndGenerate());
