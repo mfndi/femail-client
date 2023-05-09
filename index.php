@@ -1,15 +1,32 @@
 <?php
-// error_reporting(0);
+
 session_start();
 require_once __DIR__ . '/dashboard/Controllers/ApiUserController.php';
 use Controllers\ApiUserController;
+
+$apiController = new ApiUserController();
+
 
 if(isset($_SESSION['key'])){
     header("Location: user/index.php");
 }
 
+if(!is_null($apiController->onlyKey())){
+    $result = $apiController->checkKeyAndGenerate($apiController->onlyKey());
+  if($result == 401){
+    $notif401 = "Key Not Found";
+  }elseif ($result == 400){
+      $notif401 = "BANNED!";
+  }else{
+    $_SESSION['key'] = $apiController->onlyKey();
+    $_SESSION['email'] = $result->email;
+    header("Location: dashboard/index.php");
+  }
+}
+
+
+
 if(isset($_POST['submit'])){
-  $apiController = new ApiUserController();
   $result = $apiController->checkKeyAndGenerate($_POST['key']);
   if($result == 401){
     $notif401 = "Key Not Found";
