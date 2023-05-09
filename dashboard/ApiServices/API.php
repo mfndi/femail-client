@@ -10,17 +10,22 @@ use Dotenv\Dotenv;
 class API
 {
     Protected $url;
+    public $KEY;
     public function __construct()
     {
         $dotEnv = Dotenv::createImmutable(__DIR__ . '/../')->load();
-        $this->url = $dotEnv['API_DOMAIN'];
+       $this->url = $dotEnv['API_DOMAIN'];
+       $this->KEY = $dotEnv['KEY'];
     }
 
     public function generateEmail($key)
     {
-        $curl = curl_init();
+
+
+    
         $URL = $this->url."api/generate-email";
-        curl_setopt_array($curl, [
+        $curl = curl_init();
+            curl_setopt_array($curl, [
             CURLOPT_URL => $URL,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
@@ -32,20 +37,22 @@ class API
             CURLOPT_HTTPHEADER => [
                 "Content-Type: application/json"
             ],
-        ]);
+            ]);
 
         $response = curl_exec($curl);
+        $err = curl_error($curl);
         $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
-        if($httpcode == 401){
-            return  $httpcode;
-            exit();
-        }elseif($httpcode == 400) {
-            return  $httpcode;
-            exit();
-        }
+            if($httpcode == 401){
+                return  $httpcode;
+                exit();
+            }elseif($httpcode == 400) {
+                return  $httpcode;
+                exit();
+            }
         $jsonDecode = json_decode($response);
         return $jsonDecode;
+        
     }
 
 
@@ -216,5 +223,6 @@ class API
             $json = \json_decode($response);
             return $json;
     }
+
 
 }
